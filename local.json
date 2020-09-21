@@ -1,0 +1,27 @@
+[
+  {
+    "name": "clear_port",
+    "script": "pid_found=$(netstat -vanp tcp | grep $1 | awk '{print $9}')\nkill -9 $pid_found\n",
+    "type": "function"
+  },
+  {
+    "name": "alvord",
+    "script": "/home/jessiahr/Desktop/dev/alvord/alvord",
+    "type": "alias"
+  },
+  {
+    "name": "mc",
+    "script": "iex -S mix",
+    "type": "alias"
+  },
+  {
+    "name": "show_port",
+    "script": "pid_found=$(netstat -vanp tcp | grep $1 | awk '{print $9}')\necho '$pid_found'\nps -p $pid_found\n",
+    "type": "function"
+  },
+  {
+    "name": "ALVORD_RENDERED_AT",
+    "script": "1600635041",
+    "type": "config"
+  }
+]
