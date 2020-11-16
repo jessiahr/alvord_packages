@@ -1,0 +1,6 @@
+---
+name: elixir
+blocks:
+- name: mc
+  value: iex -S mix
+  type: alias

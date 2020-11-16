@@ -1,0 +1,24 @@
+---
+name: rails
+blocks:
+- name: clear_all_ruby
+  value: kill -9 $(ps -al | grep 'ruby' | awk '{print $4}')
+  type: function
+- name: be
+  value: bundle exec
+  type: alias
+- name: cop
+  value: bundle exec rubocop
+  type: alias
+- name: rs
+  value: bundle exec rails server
+  type: alias
+- name: rc
+  value: bundle exec rails console
+  type: alias
+- name: ber
+  value: bundle exec rspec
+  type: alias
+- name: berg
+  value: bundle exec rspec -P spec/**/*?$1*_spec.rb
+  type: function

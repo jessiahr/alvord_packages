@@ -1,0 +1,13 @@
+---
+name: git
+blocks:
+- name: gohome
+  value: >
+    git checkout master
+  type: function
+
+- name: gs
+  value: >
+    git status
+  type: function
+        
