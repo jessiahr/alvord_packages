@@ -4,3 +4,21 @@ blocks:
 - name: mc
   value: iex -S mix
   type: alias
+- name: mf
+  value: mix format
+  type: alias
+- name: mt
+  value: mix test
+  type: alias
+- name: ms
+  value: mix phx.server
+  type: alias
+- name: mem
+  value: mix ecto.migrate
+  type: alias
+- name: mdg
+  value: mix deps.get
+  type: alias
+- name: mrs
+  value: MIX_ENV=test mix ecto.reset && MIX_ENV=dev mix ecto.reset
+  type: alias

@@ -3,11 +3,17 @@ name: git
 blocks:
 - name: gohome
   value: >
-    git checkout master
+    git checkout $(git remote show origin | grep 'HEAD branch' | cut -d' ' -f5)
+    
   type: function
 
 - name: gs
   value: >
     git status
+  type: function
+
+- name: squash
+  value: >
+    git reset --soft `git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'` && git add . && git commit -m"$1" 
   type: function
         

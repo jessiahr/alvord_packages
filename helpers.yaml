@@ -1,0 +1,6 @@
+---
+name: helpers
+blocks:
+- name: hg
+  value: history | grep
+  type: alias

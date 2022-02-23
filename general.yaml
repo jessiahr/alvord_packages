@@ -1,48 +1,48 @@
 ---
-    name: general
-    blocks:
-    - name: alvord_path
-      type: attribute
-      meta: 
-        docs: Path to the alvord executable
-    
-    - name: zoom_link
-      type: attribute
-      meta: 
-        docs: Personal zoom link
-    
-      
-    - name: clear_port
-      value: |
-        pid_found=$(netstat -vanp tcp | grep $1 | awk '{print $9}')
-        kill -9 $pid_found
-      type: function
-      meta: 
-        docs: Stops a process running on a given port
-    
-    - name: alvord
-      value: "$(alvord attribute alvord_path)"
-      type: alias
-      meta:
-        deps: 
-        - alvord_path
-    
-    - name: show_port
-      value: |
-        pid_found=$(netstat -vanp tcp | grep $1 | awk '{print $9}')
-        echo '$pid_found'
-        ps -p $pid_found
-      type: function
-    
-    - name: ALVORD_RENDERED_AT
-      value: '1600635041'
-      type: config
-    
-    - name: zc
-      value: echo $(alvord attribute zoom_link)'
-        | xclip -selection c &&  echo 'zoom link coppied to clipboard' && google-chrome $(alvord attribute zoom_link)
-      type: alias
-      meta: 
-        deps: 
-        - zoom_link
+name: general
+blocks:
+- name: alvord_path
+  type: attribute
+  meta: 
+    docs: Path to the alvord executable
+
+- name: zoom_link
+  type: attribute
+  meta: 
+    docs: Personal zoom link
+
+  
+- name: clear_port
+  value: |
+    pid_found=$(netstat -vanp tcp | grep $1 | awk '{print $9}')
+    kill -9 $pid_found
+  type: function
+  meta: 
+    docs: Stops a process running on a given port
+
+- name: alvord
+  value: "$(alvord attribute alvord_path)"
+  type: alias
+  meta:
+    deps: 
+    - alvord_path
+
+- name: show_port
+  value: |
+    pid_found=$(netstat -vanp tcp | grep $1 | awk '{print $9}')
+    echo '$pid_found'
+    ps -p $pid_found
+  type: function
+
+- name: ALVORD_RENDERED_AT
+  value: '1600635041'
+  type: config
+
+- name: zc
+  value: echo $(alvord attribute zoom_link)'
+    | xclip -selection c &&  echo 'zoom link coppied to clipboard' && google-chrome $(alvord attribute zoom_link)
+  type: alias
+  meta: 
+    deps: 
+    - zoom_link
       
