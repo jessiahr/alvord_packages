@@ -19,6 +19,6 @@ blocks:
 - name: mdg
   value: mix deps.get
   type: alias
-- name: mrs
+- name: mer
   value: MIX_ENV=test mix ecto.reset && MIX_ENV=dev mix ecto.reset
   type: alias

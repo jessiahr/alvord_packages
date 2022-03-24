@@ -1,15 +1,15 @@
 ---
 name: general
 blocks:
-- name: alvord_path
-  type: attribute
-  meta: 
-    docs: Path to the alvord executable
+# - name: alvord_path
+#   type: attribute
+#   meta: 
+#     docs: Path to the alvord executable
 
-- name: zoom_link
-  type: attribute
-  meta: 
-    docs: Personal zoom link
+# - name: zoom_link
+#   type: attribute
+#   meta: 
+#     docs: Personal zoom link
 
   
 - name: clear_port
@@ -19,13 +19,20 @@ blocks:
   type: function
   meta: 
     docs: Stops a process running on a given port
+    
+- name: zoomx
+  value: |
+    kill $(ps -ax | grep zoom | awk '{print $1}')
+  type: function
+  meta: 
+    docs: Stops zoom
 
-- name: alvord
-  value: "$(alvord attribute alvord_path)"
-  type: alias
-  meta:
-    deps: 
-    - alvord_path
+# - name: alvord
+#   value: "$(alvord attribute alvord_path)"
+#   type: alias
+#   meta:
+#     deps: 
+#     - alvord_path
 
 - name: show_port
   value: |
@@ -34,15 +41,15 @@ blocks:
     ps -p $pid_found
   type: function
 
-- name: ALVORD_RENDERED_AT
-  value: '1600635041'
-  type: config
+# - name: ALVORD_RENDERED_AT
+#   value: '1600635041'
+#   type: config
 
-- name: zc
-  value: echo $(alvord attribute zoom_link)'
-    | xclip -selection c &&  echo 'zoom link coppied to clipboard' && google-chrome $(alvord attribute zoom_link)
-  type: alias
-  meta: 
-    deps: 
-    - zoom_link
+# - name: zc
+#   value: echo $(alvord attribute zoom_link)'
+#     | xclip -selection c &&  echo 'zoom link coppied to clipboard' && google-chrome $(alvord attribute zoom_link)
+#   type: alias
+#   meta: 
+#     deps: 
+#     - zoom_link
       
